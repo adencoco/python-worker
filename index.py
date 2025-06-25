@@ -2,7 +2,7 @@ from workers import Response
 
 async def on_fetch(request):
     if request.method != "POST":
-        return Response("Use POST with a 'code' field", status=405)
+        return Response("Incorrect request type", status=405)
 
     try:
         raw = await request.json()
